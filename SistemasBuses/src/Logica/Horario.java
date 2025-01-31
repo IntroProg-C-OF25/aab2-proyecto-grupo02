@@ -28,7 +28,6 @@ public class Horario {
             return;
         }
 
-        // Imprimir las líneas leídas
         for (List<String> fila : lineas) {
             System.out.println(String.join(" | ", fila));
         }
