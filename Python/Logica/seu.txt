@@ -1,0 +1,45 @@
+    Peocedimiento datos(n)   
+        // inicializacion de variables
+        nombres[n] x(50)[A-Z,a-z,B/S] 
+        calificaciones [n][3] d[0-10]
+        nombre x(50)[A-Z,a-z,B/S] 
+        promedio d[0-10]
+        frecuencia i[1-2]
+        
+        // Generar datos aleatorios
+        <<"Nombre\t", "Matematica\t", "Fisica\t", "Quimica\t", "Promedio", "Estado\t"
+        para ( i = 0, i < n, i++) 
+            <<"Ingrese el nombre del estudiante"
+            >>nombres[i] 
+            para ( j = 0, j < 3, j++) 
+		        <<"Ingrese las calificaciones"
+                >>calificaciones[i][j] 
+            fin para
+
+            promedio = calcularPromedio(calificaciones, i);
+            frecuencia = (promedio < 7) ? 1 : 2;
+            estado = (promedio >= 7) ? "Aprobado" : "Reprobado";
+            
+            // Generar reporte por estudiante
+            <<"Estudiante: " + nombres[i] 
+            <<"Calificaciones: " + calificaciones[i][0] + ", " + calificaciones[i][1] + ", " + calificaciones[i][2] 
+            <<"Promedio: " + promedio + " - " + "frecuencia"+frecuencia+estado 
+        fin para
+    fin procedimiento
+
+    funcion calcularPromedio(double[][] calificaciones, cont) 
+         suma d[0-n] = 0;
+        Para (i=0, i<n, i++)
+            suma += calificacion;
+        Fin para
+        return suma/3
+    fin funcion
+
+    Inicio
+        //inicializacion
+        n i[0-n]
+        // Pedir al usuario el número de estudiantes
+        <<"Ingrese el numero de estudiantes:"
+	    >>n
+        datos(n)
+    Fin
