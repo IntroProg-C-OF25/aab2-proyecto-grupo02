@@ -1,8 +1,8 @@
 import math
 
-class Opt_Rutas:
+class optRutas:
     def mostrar_resultados(self):
-        archivo = "C:\Users\User\Desktop\Talleres\por ahora\aab2-proyecto-grupo02\Python\Datos\Lineasbu - copia.csv"
+        archivo = r"C:\Users\User\Desktop\Talleres\por ahora\aab2-proyecto-grupo02\Python\Datos\Lineasbu - copia.csv"
         lineas_y_paradas = self.leer_archivo_csv(archivo)
 
         if not lineas_y_paradas:
@@ -81,7 +81,7 @@ class Opt_Rutas:
             c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
             return radio_tierra * c
         except ValueError:
-            print("Error: Las coordenadas no son números válidos.")
+            print("Error: Las coordenadas no son numeros validos.")
             return float("inf")
 
     def buscar_parada(self, lineas_y_paradas, nombre_parada):

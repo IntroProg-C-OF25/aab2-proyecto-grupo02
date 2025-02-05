@@ -1,7 +1,7 @@
 
-class ParadasRutas:
+class Rutas:
     def mostrar_resultados(self):
-        archivo = "C:\Users\User\Desktop\Talleres\por ahora\aab2-proyecto-grupo02\Python\Datos\Lineasbu.csv"
+        archivo = r"C:\Users\User\Desktop\Talleres\por ahora\aab2-proyecto-grupo02\Python\Datos\Lineasbu.csv"
         lineas_y_paradas = self.leer_archivo_csv(archivo)
 
         if not lineas_y_paradas:
@@ -11,7 +11,7 @@ class ParadasRutas:
         print("=== LINEAS Y PARADAS ===")
         for linea_y_paradas in lineas_y_paradas:
             if not linea_y_paradas:
-                print("\nAdvertencia: Se encontró una línea sin datos.")
+                print("\nAdvertencia: Se encontro una linea sin datos.")
                 continue
 
             nombre_linea = linea_y_paradas[0]

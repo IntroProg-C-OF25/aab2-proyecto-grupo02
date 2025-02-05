@@ -1,7 +1,7 @@
 
-class HorariosRutas:
+class Horarios:
     def mostrar_horarios(self):
-        ruta_archivo = "C:\Users\User\Desktop\Talleres\por ahora\aab2-proyecto-grupo02\Python\Datos\Horarios.csv"
+        ruta_archivo = r"C:\Users\User\Desktop\Talleres\por ahora\aab2-proyecto-grupo02\Python\Datos\Horarios.csv"
         lineas = self.leer_archivo(ruta_archivo)
 
         if not lineas:
