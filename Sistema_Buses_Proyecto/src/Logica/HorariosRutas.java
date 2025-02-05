@@ -12,7 +12,6 @@ public class HorariosRutas {
         String rutaArchivo = "C:\\Users\\User\\Desktop\\Talleres\\por ahora\\aab2-proyecto-grupo02\\Sistema_Buses_Proyecto\\src\\Datos\\Horarios.csv";
         List<List<String>> lineas = leerArchivo(rutaArchivo);
 
-<<<<<<< HEAD
         if (lineas.isEmpty()) {
             System.out.println("No se encontraron datos en el archivo.");
             return;
@@ -25,9 +24,7 @@ public class HorariosRutas {
     }
 
     public List<List<String>> leerArchivo(String rutaArchivo) {
-=======
-        String rutaArchivo = "C:\\Users\\Usuario iTC\\Desktop\\Projectos PV\\Proyectos y Talleres\\aab2-proyecto-grupo02\\Sistema_Buses_Proyecto\\src\\Datos\\Horarios.csv";
->>>>>>> 7d8f7b34baef71d79a0e6dfc2669f2fac5633e3d
+
         List<List<String>> lineas = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
             String linea;
@@ -40,16 +37,12 @@ public class HorariosRutas {
                 lineas.add(fila);
             }
         } catch (IOException e) {
-<<<<<<< HEAD
+
             System.err.println("Error al leer el archivo: " + e.getMessage());
-=======
-            System.err.println("Error al leer el archivo: " + "\n" +e.getMessage());
-            return;
         }
 
         for (List<String> fila : lineas) {
             System.out.println(String.join(" | ", fila));
->>>>>>> 7d8f7b34baef71d79a0e6dfc2669f2fac5633e3d
         }
         return lineas;
     }

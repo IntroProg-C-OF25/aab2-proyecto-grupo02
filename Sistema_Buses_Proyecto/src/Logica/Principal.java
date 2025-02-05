@@ -19,7 +19,7 @@ public class Principal {
             System.out.println("3. Rutas Optimizadas");
             System.out.println("4. Buscar por parada");
             System.out.println("5. Salir");
-            System.out.print("Escoja una opción: ");
+            System.out.print("Escoja una opcion: ");
 
             try {
                 opc = input.nextInt();

@@ -22,7 +22,7 @@ public class BuscarParadas {
 
         for (List<String> linea : lineasYParadas) {
             if (linea.contains(nombreParada)) {
-                System.out.println("Línea: " + linea.get(0));
+                System.out.println("Ruta: " + linea.get(0));
                 encontrado = true;
             }
         }

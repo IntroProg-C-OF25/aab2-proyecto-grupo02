@@ -8,16 +8,10 @@ import java.util.List;
 
 public class ParadasRutas {
 
-<<<<<<< HEAD
+
     public void mostrarResultados() {
         String archivo = "C:\\Users\\User\\Desktop\\Talleres\\por ahora\\aab2-proyecto-grupo02\\Sistema_Buses_Proyecto\\src\\Datos\\Lineasbu.csv";
         List<List<String>> lineasYParadas = leerArchivoCSV(archivo);
-=======
-    public static void main(String[] args) {
-        // Declaración de variables
-        String archivo = "C:\\\\Users\\\\Usuario iTC\\\\Desktop\\\\Projectos PV\\\\Proyectos y Talleres\\\\aab2-proyecto-grupo02\\\\Sistema_Buses_Proyecto\\\\src\\\\Datos\\\\Lineasbu.csv";
-        List<ArrayList<String>> lineasYParadas;
->>>>>>> 7d8f7b34baef71d79a0e6dfc2669f2fac5633e3d
 
         if (lineasYParadas.isEmpty()) {
             System.out.println("No se encontraron datos en el archivo CSV.");
@@ -39,7 +33,7 @@ public class ParadasRutas {
         }
     }
 
-    public List<List<String>> leerArchivoCSV(String archivo) {
+    public static List<List<String>> leerArchivoCSV(String archivo) {
         List<List<String>> lineasYParadas = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
             String linea;
