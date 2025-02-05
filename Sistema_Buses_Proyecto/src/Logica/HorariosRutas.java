@@ -10,7 +10,7 @@ public class HorariosRutas {
 
     public static void main(String[] args) {
 
-        String rutaArchivo = "C:\\Users\\Usuario iTC\\Desktop\\Projectos PV\\Proyectos y Talleres\\aab2-proyecto-grupo02\\SistemasBuses\\src\\Datos\\Horarios.csv";
+        String rutaArchivo = "C:\\Users\\Usuario iTC\\Desktop\\Projectos PV\\Proyectos y Talleres\\aab2-proyecto-grupo02\\Sistema_Buses_Proyecto\\src\\Datos\\Horarios.csv";
         List<List<String>> lineas = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
@@ -24,7 +24,7 @@ public class HorariosRutas {
                 lineas.add(fila);
             }
         } catch (IOException e) {
-            System.err.println("Error al leer el archivo: " + e.getMessage());
+            System.err.println("Error al leer el archivo: " + "\n" +e.getMessage());
             return;
         }
 

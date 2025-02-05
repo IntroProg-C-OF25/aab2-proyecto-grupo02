@@ -9,7 +9,7 @@ public class Opt_Rutas {
 
     public static void main(String[] args) {
         // Declaración de variables
-        String archivo = "C:\\Users\\User\\Desktop\\Talleres\\por ahora\\aab2-proyecto-grupo02\\aab2-proyecto-grupo02\\Buses\\src\\main\\Datos\\Lineasbu - Copia.csv";
+        String archivo = "C:\\Users\\Usuario iTC\\Desktop\\Projectos PV\\Proyectos y Talleres\\aab2-proyecto-grupo02\\Sistema_Buses_Proyecto\\src\\Datos\\Lineasbu - copia.csv";
         List<ArrayList<String>> lineasYParadas;
 
         // Proceso
