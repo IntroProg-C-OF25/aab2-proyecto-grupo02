@@ -1,3 +1,4 @@
+
 class ParadasRutas:
     def mostrar_resultados(self):
         archivo = "C:\Users\User\Desktop\Talleres\por ahora\aab2-proyecto-grupo02\Python\Datos\Lineasbu.csv"
@@ -30,3 +31,4 @@ class ParadasRutas:
         except IOError as e:
             print(f"Error al leer el archivo CSV: {e}")
         return lineas_y_paradas
+
