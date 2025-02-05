@@ -7,43 +7,52 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HorariosRutas {
-
+    
+    //Metodo para mostrar loa horarios
     public void mostrarHorarios() {
+        //Variable para que lea la ubicacion del archivo
         String rutaArchivo = "C:\\Users\\User\\Desktop\\Talleres\\por ahora\\aab2-proyecto-grupo02\\Sistema_Buses_Proyecto\\src\\Datos\\Horarios.csv";
+        //Llamada a la funcion 
         List<List<String>> lineas = leerArchivo(rutaArchivo);
-
+        
+        //verificacion del archivo si no esta vacio
         if (lineas.isEmpty()) {
             System.out.println("No se encontraron datos en el archivo.");
             return;
         }
-
+        
+        //Impresion de los Horarios 
         System.out.println("=== HORARIOS ===");
+        //For-each (Typo-dato, nombre->variable de iteracion: nombre de la variable)
         for (List<String> fila : lineas) {
             System.out.println(String.join(" | ", fila));
         }
     }
-
+    
+    //Funcion para leer el archivo CSV
     public List<List<String>> leerArchivo(String rutaArchivo) {
-
-        List<List<String>> lineas = new ArrayList<>();
+        //Declaracio e inilizacion de variable 
+        List<List<String>> lineas = new ArrayList<>();//List<List<String>>
+        String linea;
+        //Lectura y cierre del archivo 
         try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
-            String linea;
+            // Lectura de todas la lineas del archivo 
             while ((linea = br.readLine()) != null) {
+                //Divicion en campos(columnas) separadas por coma [7:00 AM,Linea 03]->[7:00 AM][Linea 03]
                 String[] columnas = linea.split(",");
                 List<String> fila = new ArrayList<>();
                 for (String columna : columnas) {
+                    //Incorporacion de columnas y eliminacion de espacios innecesarios
                     fila.add(columna.trim());
                 }
+                //Agrega la fila ya procesada a la lista lineas 
                 lineas.add(fila);
             }
         } catch (IOException e) {
-
-            System.err.println("Error al leer el archivo: " + e.getMessage());
+            //muestra mennsaje si hay error en el try de leer el archivo
+            System.err.println("Error al leer el archivo: " + e.getMessage());          
         }
-
-        for (List<String> fila : lineas) {
-            System.out.println(String.join(" | ", fila));
-        }
+        //devuelve la variable lineas 
         return lineas;
     }
 }

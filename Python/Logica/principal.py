@@ -1,10 +1,5 @@
-import sys
-import os
 
-# Agregar el directorio "Logica" al path para evitar errores de importación
-sys.path.append(os.path.abspath(os.path.dirname(__file__) + "/Logica"))
 
-# Importación de módulos corregidos
 from Horarios import Horarios
 from Paradas import Rutas
 from optRutas import optRutas

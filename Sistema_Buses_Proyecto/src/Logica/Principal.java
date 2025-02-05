@@ -6,7 +6,8 @@ public class Principal {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int opc;
-
+        
+        //llamada de las demas clases de java
         HorariosRutas llamadaHorarios = new HorariosRutas();
         ParadasRutas llamadaPaRu = new ParadasRutas();
         Opt_Rutas llamaOpRutas = new Opt_Rutas();
@@ -23,10 +24,11 @@ public class Principal {
 
             try {
                 opc = input.nextInt();
-                input.nextLine(); // Limpiar el buffer del scanner
+                input.nextLine(); 
 
                 switch (opc) {
                     case 1:
+                        //llamada del metodo mortrarHorarios de la clase HorariosRutas
                         llamadaHorarios.mostrarHorarios();
                         break;
                     case 2:

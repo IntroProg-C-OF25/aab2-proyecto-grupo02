@@ -8,46 +8,62 @@ import java.util.List;
 
 public class ParadasRutas {
 
-
+    //metodo para mostrar los resultados
     public void mostrarResultados() {
+        //Variable para que lea la ubicacion del archivo
         String archivo = "C:\\Users\\User\\Desktop\\Talleres\\por ahora\\aab2-proyecto-grupo02\\Sistema_Buses_Proyecto\\src\\Datos\\Lineasbu.csv";
+        //Llamada a la funcion 
         List<List<String>> lineasYParadas = leerArchivoCSV(archivo);
-
+        
+        //verificacion del archivo si no esta vacio
         if (lineasYParadas.isEmpty()) {
             System.out.println("No se encontraron datos en el archivo CSV.");
             return;
         }
 
+        //Impresion de las Lines y Paradas
         System.out.println("=== LINEAS Y PARADAS ===");
+        //For-each (Typo-dato, nombre->variable de iteracion: nombre de la variable)
         for (List<String> lineaYParadas : lineasYParadas) {
+            //Verifica si las lineas existentes en el archivo esten vacias 
             if (lineaYParadas.isEmpty()) {
                 System.out.println("\nAdvertencia: Se encontro una linea sin datos.");
                 continue;
             }
-
+            //Toma la primera columna como nombre de la ruta 
             String nombreLinea = lineaYParadas.get(0);
+            //Toma las siguientes columnas como paradas de la ruta 
             List<String> paradas = lineaYParadas.subList(1, lineaYParadas.size());
-
+            
+            //Muetra las rutas con sus paradas 
             System.out.println("\nRuta: " + nombreLinea);
             System.out.println("Paradas: " + String.join(" -> ", paradas));
         }
     }
-
+    
+    //lectura del archivo 
     public static List<List<String>> leerArchivoCSV(String archivo) {
+        //Declaracio e inilizacion de variable 
         List<List<String>> lineasYParadas = new ArrayList<>();
+        String linea;
+        //Lectura y cierre del archivo 
         try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
-            String linea;
+            //Divicion en campos(columnas) separadas por ";" [Linea 1,Parque Infantil]->[Linea 1][Parque Infantil]
             while ((linea = br.readLine()) != null) {
                 String[] partes = linea.split(";");
                 List<String> fila = new ArrayList<>();
                 for (String parte : partes) {
+                    //Incorporacion de columnas y eliminacion de espacios innecesarios
                     fila.add(parte.trim());
                 }
+                //Agrega la fila ya procesada a la lista lineas 
                 lineasYParadas.add(fila);
             }
         } catch (IOException e) {
+            //muestra mennsaje si hay error en el try de leer el archivo
             System.err.println("Error al leer el archivo CSV: " + e.getMessage());
         }
+        //devuelve la variable lineas 
         return lineasYParadas;
     }
 }
